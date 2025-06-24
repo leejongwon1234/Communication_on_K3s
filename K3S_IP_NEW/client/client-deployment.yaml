@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pingpong-client
+  labels:
+    app: pingpong-client
+spec:
+  containers:
+  - name: client
+    image: leejongwon2048/pingpong-test1:client
+    imagePullPolicy: Always  # ← 반드시 추가!
+    env:
+    - name: SERVER_IP
+      value: "10.42.0.90"  # ← 여기에 실제 pingpong-server의 IP를 입력하세요

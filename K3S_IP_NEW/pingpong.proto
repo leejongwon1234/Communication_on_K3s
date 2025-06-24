@@ -1,0 +1,16 @@
+// pingpong.proto
+syntax = "proto3";
+
+service PingPongService {
+  rpc Ping(PingRequest) returns (PingReply);
+}
+
+message PingRequest {
+  int32 sequence = 1;
+  bytes payload = 2;
+}
+
+message PingReply {
+  int32 sequence = 1;
+  bytes payload = 2;
+}
